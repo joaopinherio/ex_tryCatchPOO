@@ -5,7 +5,7 @@ public class Agenda implements Iterador{
     private int posicaoAtual;
     private ArrayList<Pessoa> colecao;
 
-    Agenda(){
+    public Agenda(){
         colecao = new ArrayList<>();
     }
 
@@ -27,6 +27,12 @@ public class Agenda implements Iterador{
         return colecao.get(posicaoAtual+1);
     }
 
+    public boolean addPessoa(Pessoa p){
+        if(colecao.add(p)){
+            this.posicaoAtual++;
+        }
+        return false;
+    }
 
 
 }
