@@ -28,7 +28,18 @@ public class Aplicacao {
             Pessoa aux = (Pessoa) agenda.next();
             System.out.println("=========================");
             System.out.println("Nome da pessoa: " + aux.getNome());
-            System.out.println("Estado civil da pessoa: " + aux.getEstadoCivil().getExtenso());
+            //System.out.println("Estado civil da pessoa: " + aux.getEstadoCivil().getExtenso());
+            System.out.println("Estado civil da pessoa: " + tratamentoEstadoCivil(aux));
+        }
+    }
+
+    private String tratamentoEstadoCivil(Pessoa aux){
+        try{
+            return aux.getEstadoCivil().getExtenso();
+        }
+        catch(Exception e){
+            System.out.println("nao eh possivel chamar um enum NULL");
+            return null;
         }
     }
 }
