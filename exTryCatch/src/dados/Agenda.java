@@ -11,12 +11,12 @@ public class Agenda implements Iterador{
 
     @Override
     public void reset(){
-        this.posicaoAtual = -1;
+        this.posicaoAtual = 0;
     }
 
     @Override
     public boolean hasNext(){
-        if(colecao.get(posicaoAtual) != null){
+        if(colecao.get(posicaoAtual+1) != null){
             return true;
         }
         return false;
@@ -24,14 +24,12 @@ public class Agenda implements Iterador{
 
     @Override
     public Object next(){
-        return colecao.get(posicaoAtual+1);
+        posicaoAtual++;
+        return colecao.get(posicaoAtual-1);
     }
 
     public boolean addPessoa(Pessoa p){
-        if(colecao.add(p)){
-            this.posicaoAtual++;
-        }
-        return false;
+        return colecao.add(p);
     }
 
 
