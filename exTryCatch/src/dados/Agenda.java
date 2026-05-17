@@ -16,10 +16,10 @@ public class Agenda implements Iterador{
 
     @Override
     public boolean hasNext(){
-        if(colecao.get(posicaoAtual+1) != null){
-            return true;
+        if(colecao.size() == posicaoAtual){
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override
